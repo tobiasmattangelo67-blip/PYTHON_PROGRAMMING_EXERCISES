@@ -1,9 +1,9 @@
 
 def isOdd(number):
-    pass
+    return number % 2 == 1
 
 def isEven(number):
-    pass
+    return number % 2 == 0
 
 assert isOdd(42) == False 
 assert isOdd(9999) == True 
