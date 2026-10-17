@@ -1,14 +1,25 @@
 
+# def findAndReplace(text, oldText, newText):
+#     replaceText = text
+#     i = 0
+#     while i < len(text):
+#         if text[i:len(oldText) + i] == oldText:
+#             replaceText = text.replace(text[i:len(oldText) + i], newText)
+#         i += 1
+#     return replaceText
+
 def findAndReplace(text, oldText, newText):
-    replaceText = text
+    replaceText = ''
     i = 0
     while i < len(text):
         if text[i:len(oldText) + i] == oldText:
-            replaceText = text.replace(text[i:len(oldText) + i], newText)
-        i += 1
+            replaceText += newText
+            i += len(oldText)
+        else:
+            replaceText += text[i]
+            i += 1
+        
     return replaceText
-
-
 
 assert findAndReplace('The fox', 'fox', 'dog') == 'The dog' 
 assert findAndReplace('fox', 'fox', 'dog') == 'dog'
